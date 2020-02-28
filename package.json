@@ -18,6 +18,7 @@
     "hapi-swagger": "7",
     "inert": "4",
     "joi": "13",
+    "jsonwebtoken": "^8.5.1",
     "package": "^1.0.1",
     "vision": "4"
   }

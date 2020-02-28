@@ -4,7 +4,7 @@
  * @Company: hNdt
  * @Author: xiaWang1024
  * @Date: 2020-02-26 16:27:20
- * @LastEditTime: 2020-02-26 17:17:20
+ * @LastEditTime: 2020-02-28 18:29:36
  */
 
 const hapi = require('hapi')
@@ -15,6 +15,7 @@ const pluginHapiSwagger = require('./plugins/hapi-swagger')
 const routesHelloHapi = require('./routes/hello-hapi')
 const routesShops = require('./routes/shops')
 const routesOrders = require('./routes/orders')
+const routesUsers = require('./routes/users')
 
 
 
@@ -43,7 +44,8 @@ const init = async () => {
     server.route([
         ...routesHelloHapi,
         ...routesShops,
-        ...routesOrders
+        ...routesOrders,
+        ...routesUsers
     ])
 
     await server.start()

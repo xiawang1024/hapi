@@ -4,7 +4,7 @@
  * @Company: hNdt
  * @Author: xiaWang1024
  * @Date: 2020-02-26 17:06:36
- * @LastEditTime: 2020-02-26 17:48:54
+ * @LastEditTime: 2020-02-28 17:50:05
  */
 const Joi = require('joi')
 const GROUP_NAME = 'shops'
@@ -14,7 +14,7 @@ module.exports = [
         method: 'GET',
         path: `/${GROUP_NAME}`,
         handler: async (req, reply) => {
-            reply([1, 2, 3, 4, 5])
+            reply()
         },
         config: {
             tags: ['api', GROUP_NAME],
