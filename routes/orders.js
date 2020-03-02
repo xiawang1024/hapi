@@ -4,17 +4,20 @@
  * @Company: hNdt
  * @Author: xiaWang1024
  * @Date: 2020-02-26 17:12:16
- * @LastEditTime: 2020-02-28 17:45:52
+ * @LastEditTime: 2020-03-02 15:18:55
  */
 const Joi = require('joi')
 const GROUP_NAME = 'orders'
+
+const { jwtHeaderDefine } = require('../utils/router-helper')
 
 module.exports = [
     {
         method: 'POST',
         path: `/${GROUP_NAME}`,
         handler: async (req, reply) => {
-            reply()
+            console.log(req.auth.credentials)
+            reply(req.auth.credentials)
         },
         config: {
             tags: ['api', GROUP_NAME],
@@ -27,7 +30,8 @@ module.exports = [
                             count: Joi.number().integer()
                         })
                     )
-                }
+                },
+                ...jwtHeaderDefine
             }
         }
     },

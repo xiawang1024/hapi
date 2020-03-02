@@ -4,7 +4,7 @@
  * @Company: hNdt
  * @Author: xiaWang1024
  * @Date: 2020-02-26 17:06:36
- * @LastEditTime: 2020-02-28 17:50:05
+ * @LastEditTime: 2020-03-02 15:05:16
  */
 const Joi = require('joi')
 const GROUP_NAME = 'shops'
@@ -24,7 +24,8 @@ module.exports = [
                     limit: Joi.number().integer().min(1).default(10).description('每页的条目数'),
                     page: Joi.number().integer().min(1).default(1).description('页码数')
                 }
-            }
+            },
+            auth: false
         }
     },
     {

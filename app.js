@@ -4,11 +4,14 @@
  * @Company: hNdt
  * @Author: xiaWang1024
  * @Date: 2020-02-26 16:27:20
- * @LastEditTime: 2020-02-28 18:29:36
+ * @LastEditTime: 2020-03-02 15:03:51
  */
 
 const hapi = require('hapi')
 require('env2')('./.env')
+//引入身份认证
+const hapiAuthJWT2 = require('hapi-auth-jwt2')
+const pluginHapiAuthJWT2 = require('./plugins/hapi-auth-jwt2')
 //引入自定义的hapi-swagger插件配置
 const pluginHapiSwagger = require('./plugins/hapi-swagger')
 //引入路由
@@ -36,8 +39,10 @@ const init = async () => {
     await server.register([
         //为系统使用hapi-swagger
         ...pluginHapiSwagger,
-
+        hapiAuthJWT2
     ])
+
+    pluginHapiAuthJWT2(server)
     /**
      * 路由
      */

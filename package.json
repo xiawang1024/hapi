@@ -15,6 +15,7 @@
   "dependencies": {
     "env2": "^2.2.2",
     "hapi": "16",
+    "hapi-auth-jwt2": "7",
     "hapi-swagger": "7",
     "inert": "4",
     "joi": "13",
